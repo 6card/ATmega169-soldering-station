@@ -1,0 +1,41 @@
+{
+    "version": "0.1.0",
+    "command": "workbench.action.files.saveAll",
+    "isShellCommand": true,
+    "args": [],
+    "showOutput": "always",
+    "echoCommand": true,
+    "suppressTaskName": true,    
+    "tasks": [
+        {
+            "taskName": "build",
+            "command": "make",
+            "echoCommand": true,
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            },
+            "args": ["all"]
+        },
+        {
+            "taskName": "clean",
+            "command": "make",
+            "echoCommand": true,
+            "args": ["clean"]
+        },
+        {
+            "taskName": "program",
+            "command": "make",
+            "echoCommand": true,
+            "args": ["program"]
+        }
+    ]
+}
